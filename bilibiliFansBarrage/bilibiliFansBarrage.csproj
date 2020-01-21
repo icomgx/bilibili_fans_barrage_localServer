@@ -88,6 +88,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DBHelper.cs" />
+    <Compile Include="ErrorUpload.cs" />
+    <Compile Include="Globalspace.cs" />
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -43,6 +43,7 @@ namespace bilibiliFansBarrage
             if (jo["message"].ToString() != "0")
             {
                 Console.WriteLine("Data error");
+                ErrorUpload.ErrorUpload("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
                 return;
             }
             Console.WriteLine("Message=0");
