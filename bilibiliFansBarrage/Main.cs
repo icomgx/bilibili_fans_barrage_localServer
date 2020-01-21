@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static bilibiliFansBarrage.ErrorUpload;
 
 
 namespace bilibiliFansBarrage
@@ -43,7 +44,7 @@ namespace bilibiliFansBarrage
             if (jo["message"].ToString() != "0")
             {
                 Console.WriteLine("Data error");
-                ErrorUpload.ErrorUpload("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+                UploadError("BilibiliError;json:" + bilijson.ToString());
                 return;
             }
             Console.WriteLine("Message=0");
