@@ -355,5 +355,19 @@ namespace bilibiliFansBarrage
             }
         }
 
+        private void Emi_Label1_Click(object sender, EventArgs e)
+        {
+            Process.Start("https://github.com/icomgx");
+        }
+
+        private void Emi_GroupBox2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Ami_TextBox_uid_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
