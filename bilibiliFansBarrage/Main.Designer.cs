@@ -120,7 +120,7 @@
             this.ami_Label3.Name = "ami_Label3";
             this.ami_Label3.Size = new System.Drawing.Size(204, 36);
             this.ami_Label3.TabIndex = 6;
-            this.ami_Label3.Text = "粉丝弹幕地址：";
+            this.ami_Label3.Text = "弹幕大屏地址：";
             // 
             // ami_Label4
             // 
@@ -133,7 +133,7 @@
             this.ami_Label4.Name = "ami_Label4";
             this.ami_Label4.Size = new System.Drawing.Size(189, 36);
             this.ami_Label4.TabIndex = 8;
-            this.ami_Label4.Text = "粉丝弹幕API：";
+            this.ami_Label4.Text = "粉丝API地址：";
             // 
             // ami_TextBox_FansBarrageApi
             // 
@@ -241,7 +241,7 @@
             this.emi_GroupBox3.Padding = new System.Windows.Forms.Padding(5, 28, 5, 5);
             this.emi_GroupBox3.Size = new System.Drawing.Size(389, 241);
             this.emi_GroupBox3.TabIndex = 11;
-            this.emi_GroupBox3.Text = "Info";
+            this.emi_GroupBox3.Text = "状态";
             // 
             // emi_Label1
             // 
