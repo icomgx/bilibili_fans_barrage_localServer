@@ -13,7 +13,7 @@ using System.Windows.Forms;
 
 namespace bilibiliFansBarrage
 {
-    public partial class Main : EASkins.MaterialSkinManager
+    public partial class Main : MetroForm
     {
         public Main()
         {
