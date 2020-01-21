@@ -227,7 +227,7 @@ namespace bilibiliFansBarrage
             {
                 try
                 { 
-                    try{con.Open();}catch (System.Data.SQLite.SQLiteException e){AskUploadError(e.Message.ToString());}
+                    con.Open();
                 }
                 catch (System.Data.SQLite.SQLiteException e)
                 {
