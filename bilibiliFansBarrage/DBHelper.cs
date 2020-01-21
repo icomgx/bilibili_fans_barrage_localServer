@@ -230,10 +230,10 @@ namespace bilibiliFansBarrage
                 }
                 catch (System.Data.SQLite.SQLiteException e)
                 {
-                    MessageEX.BOX a = new MessageEX.BOX();
-                    a.Text = "数据库加载时发生错误：" + e;
-                    Utils.HttpGet("http://")
-                    a.Show();
+                    if(MessageBox.Show(e.Message + "\n\n选择'确定'上报错误给开发者！程序将不会上传您的任何个人信息。", "数据库连接时发生错误：", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    {
+                        Utils.HttpGet("http://ft2.club:18888/database_error?error_str=" + System.Web.HttpUtility.UrlEncode(e.Message));
+                    }
                 }
                 var i = cmd.ExecuteScalar();
                 con.Close();
