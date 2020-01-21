@@ -75,7 +75,7 @@
             this.ami_TextBox_uid.Multiline = false;
             this.ami_TextBox_uid.Name = "ami_TextBox_uid";
             this.ami_TextBox_uid.ReadOnly = false;
-            this.ami_TextBox_uid.Size = new System.Drawing.Size(167, 28);
+            this.ami_TextBox_uid.Size = new System.Drawing.Size(167, 41);
             this.ami_TextBox_uid.TabIndex = 1;
             this.ami_TextBox_uid.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
             this.ami_TextBox_uid.UseSystemPasswordChar = false;
@@ -90,7 +90,7 @@
             this.ami_Label1.Location = new System.Drawing.Point(4, 28);
             this.ami_Label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ami_Label1.Name = "ami_Label1";
-            this.ami_Label1.Size = new System.Drawing.Size(126, 20);
+            this.ami_Label1.Size = new System.Drawing.Size(213, 36);
             this.ami_Label1.TabIndex = 2;
             this.ami_Label1.Text = "请输入您的uid：";
             // 
@@ -104,7 +104,7 @@
             this.ami_TextBox_FansBarrageUrl.Multiline = false;
             this.ami_TextBox_FansBarrageUrl.Name = "ami_TextBox_FansBarrageUrl";
             this.ami_TextBox_FansBarrageUrl.ReadOnly = true;
-            this.ami_TextBox_FansBarrageUrl.Size = new System.Drawing.Size(239, 28);
+            this.ami_TextBox_FansBarrageUrl.Size = new System.Drawing.Size(239, 41);
             this.ami_TextBox_FansBarrageUrl.TabIndex = 5;
             this.ami_TextBox_FansBarrageUrl.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
             this.ami_TextBox_FansBarrageUrl.UseSystemPasswordChar = false;
@@ -118,7 +118,7 @@
             this.ami_Label3.Location = new System.Drawing.Point(13, 37);
             this.ami_Label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ami_Label3.Name = "ami_Label3";
-            this.ami_Label3.Size = new System.Drawing.Size(121, 20);
+            this.ami_Label3.Size = new System.Drawing.Size(204, 36);
             this.ami_Label3.TabIndex = 6;
             this.ami_Label3.Text = "弹幕大屏地址：";
             // 
@@ -131,7 +131,7 @@
             this.ami_Label4.Location = new System.Drawing.Point(18, 138);
             this.ami_Label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ami_Label4.Name = "ami_Label4";
-            this.ami_Label4.Size = new System.Drawing.Size(111, 20);
+            this.ami_Label4.Size = new System.Drawing.Size(189, 36);
             this.ami_Label4.TabIndex = 8;
             this.ami_Label4.Text = "粉丝API地址：";
             // 
@@ -145,7 +145,7 @@
             this.ami_TextBox_FansBarrageApi.Multiline = false;
             this.ami_TextBox_FansBarrageApi.Name = "ami_TextBox_FansBarrageApi";
             this.ami_TextBox_FansBarrageApi.ReadOnly = true;
-            this.ami_TextBox_FansBarrageApi.Size = new System.Drawing.Size(239, 28);
+            this.ami_TextBox_FansBarrageApi.Size = new System.Drawing.Size(239, 41);
             this.ami_TextBox_FansBarrageApi.TabIndex = 7;
             this.ami_TextBox_FansBarrageApi.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
             this.ami_TextBox_FansBarrageApi.UseSystemPasswordChar = false;
@@ -249,22 +249,22 @@
             this.emi_Label1.BackColor = System.Drawing.Color.Transparent;
             this.emi_Label1.Font = new System.Drawing.Font("Segoe UI", 8F);
             this.emi_Label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(142)))), ((int)(((byte)(142)))));
-            this.emi_Label1.Location = new System.Drawing.Point(477, 509);
+            this.emi_Label1.Location = new System.Drawing.Point(352, 516);
             this.emi_Label1.Name = "emi_Label1";
-            this.emi_Label1.Size = new System.Drawing.Size(142, 13);
+            this.emi_Label1.Size = new System.Drawing.Size(366, 25);
             this.emi_Label1.TabIndex = 12;
-            this.emi_Label1.Text = "Powered by iCOMgx\'s Atai";
+            this.emi_Label1.Text = "Powered by iCOMgx\'s Atai and Sheng FAN";
             this.emi_Label1.Click += new System.EventHandler(this.Emi_Label1_Click);
             // 
             // Main
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(723, 545);
-            this.Controls.Add(this.emi_Label1);
             this.Controls.Add(this.emi_GroupBox3);
             this.Controls.Add(this.emi_GroupBox2);
             this.Controls.Add(this.emi_GroupBox1);
+            this.Controls.Add(this.emi_Label1);
             this.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -273,7 +273,7 @@
             this.Padding = new System.Windows.Forms.Padding(27, 100, 27, 33);
             this.Resizable = false;
             this.Style = MetroFramework.MetroColorStyle.Pink;
-            this.Text = "bilibili粉丝弹幕本地版服务 V1.0[Preview]";
+            this.Text = "bilibili粉丝弹幕本地版服务 V1.0 - Branch: Dev";
             this.Theme = MetroFramework.MetroThemeStyle.Light;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Main_FormClosing);
             this.Load += new System.EventHandler(this.Main_Load);
