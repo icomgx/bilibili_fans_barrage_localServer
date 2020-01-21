@@ -1,5 +1,5 @@
 using System;
-using bilibiliFansBarrage.Utils;
+using System.Web;
 
 namespace bilibiliFansBarrage
 {
@@ -24,7 +24,11 @@ namespace bilibiliFansBarrage
 
         public static void ErrorUpload(string Error)
         {
-            HttpGet("http://ft2.club:1088/e=" + System.Net.)
+            try
+            {
+                HttpGet("http://ft2.club:1088/e=" + System.Web.HttpUtility.UrlEncode(Error));
+            }
+            catch (Exception) { }
         }
     }
 }

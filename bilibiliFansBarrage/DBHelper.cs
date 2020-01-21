@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Data.SQLite;
 using System.Windows.Forms;
-using bilibiliFansBarrage.ErrorUpload
+using bilibiliFansBarrage.ErrorUpload;
 
 namespace bilibiliFansBarrage
 {
