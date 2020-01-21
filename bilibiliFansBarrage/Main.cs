@@ -43,8 +43,7 @@ namespace bilibiliFansBarrage
             if (jo["message"].ToString() != "0")
             {
                 Console.WriteLine("Data error");
-
-
+                return;
             }
             Console.WriteLine("Message=0");
             JArray jar = JArray.Parse(((JObject)jo["data"])["list"].ToString());
