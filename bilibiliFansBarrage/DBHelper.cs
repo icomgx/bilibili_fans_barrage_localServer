@@ -224,7 +224,17 @@ namespace bilibiliFansBarrage
             string SqlCmdStr = "SELECT COUNT(*) FROM fans_bc WHERE mid='" + mid + "'";
             using (SQLiteCommand cmd = new SQLiteCommand(SqlCmdStr, con))
             {
-                con.Open();
+                try
+                {
+                    con.Open();
+                }
+                catch (System.Data.SQLite.SQLiteException e)
+                {
+                    MessageEX.BOX a = new MessageEX.BOX();
+                    a.Text = "数据库加载时发生错误：" + e;
+                    Utils.HttpGet("http://")
+                    a.Show();
+                }
                 var i = cmd.ExecuteScalar();
                 con.Close();
                 return i.ToString();

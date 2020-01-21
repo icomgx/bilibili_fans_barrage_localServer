@@ -39,7 +39,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EASkins">
-      <HintPath>..\..\..\MaterialManagement\EASkins.dll</HintPath>
+      <HintPath>..\..\EASkins\EASkins\bin\Debug\EASkins.dll</HintPath>
+    </Reference>
+    <Reference Include="EAStyles">
+      <HintPath>..\..\EASkins\EAStyles\bin\Debug\EAStyles.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.3.0\lib\net45\EntityFramework.dll</HintPath>
@@ -85,9 +88,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DBHelper.cs" />
-    <Compile Include="Main.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Main.cs" />
     <Compile Include="Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>

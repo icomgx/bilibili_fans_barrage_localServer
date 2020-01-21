@@ -13,7 +13,7 @@ using System.Windows.Forms;
 
 namespace bilibiliFansBarrage
 {
-    public partial class Main : MetroForm
+    public partial class Main : EASkins.MaterialSkinManager
     {
         public Main()
         {
@@ -31,6 +31,8 @@ namespace bilibiliFansBarrage
         static long FansCounts = 0;
         static long FansP = 0;
         static string uid = "";
+        private readonly object utils;
+
         private static void start()
         {
             string mid, mtime, uname, face;
@@ -106,7 +108,7 @@ namespace bilibiliFansBarrage
                     HttpListenerContext context = m_http_listener.GetContext();
                     HttpListenerRequest request = context.Request;
                     HttpListenerResponse response = context.Response;
-
+                    AddFansLogText(context.Request.Url.ToString());
                     switch (context.Request.QueryString["Mode"])
                     {
                         default:
@@ -122,7 +124,7 @@ namespace bilibiliFansBarrage
                             response.AddHeader("Access-Control-Allow-Origin", "*");
                             using (StreamWriter writer = new StreamWriter(context.Response.OutputStream, Encoding.UTF8))
                             {
-                                writer.Write(Utils.ResponseA2(DBHelper.TakeoutBC_uname()+" "+StarHubSelector(Convert.ToInt32(DBHelper.TakeoutBC_Flag())), DBHelper.TakeoutBC_face()));
+                                writer.Write(Utils.ResponseA2(DBHelper.TakeoutBC_uname() + " " + StarHubSelector(Convert.ToInt32(DBHelper.TakeoutBC_Flag())), DBHelper.TakeoutBC_face()));
                                 DBHelper.TakeoutBC_RemoveTemp();
                             }
                             break;
@@ -134,12 +136,13 @@ namespace bilibiliFansBarrage
                             }
                             break;
                     }
-            }
+                    
+                }
                 catch (Exception ex)
-            {
-                AddApiLogText("[异常] "+ex.Message);
+                {
+                    AddApiLogText("[异常] " + ex.Message);
+                }
             }
-        }
         }
 
         public bool QueryStart(Task MyTask, string url)
@@ -196,7 +199,6 @@ namespace bilibiliFansBarrage
             JObject jo = JObject.Parse(bilijson);
 
             return ((JObject)jo["data"])["total"].ToString();
-
         }
 
 
