@@ -226,7 +226,7 @@ namespace bilibiliFansBarrage
             using (SQLiteCommand cmd = new SQLiteCommand(SqlCmdStr, con))
             {
                 try
-                {
+                { 
                     try{con.Open();}catch (System.Data.SQLite.SQLiteException e){AskUploadError(e.Message.ToString());}
                 }
                 catch (System.Data.SQLite.SQLiteException e)
