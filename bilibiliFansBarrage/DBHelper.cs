@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Data.SQLite;
 using System.Windows.Forms;
-using bilibiliFansBarrage.ErrorUpload;
+using static bilibiliFansBarrage.ErrorUpload;
 
 namespace bilibiliFansBarrage
 {
@@ -35,7 +35,7 @@ namespace bilibiliFansBarrage
         public static string NewFansToDatabase(string mid, string mtime, string uname, string face, string flag)
         {
             SQLiteConnection con = new SQLiteConnection(connectionString);
-            con.Open();
+            try{con.Open();}catch (System.Data.SQLite.SQLiteException e){AskUploadError(e.Message.ToString());}
             SQLiteTransaction qLiteTransaction = con.BeginTransaction();
             SQLiteCommand qLiteCommand = new SQLiteCommand();
             qLiteCommand.Connection = con;
@@ -65,7 +65,7 @@ namespace bilibiliFansBarrage
         public static string FansUpdateToDatabase(string mid, string mtime, string uname, string face)
         {
             SQLiteConnection con = new SQLiteConnection(connectionString);
-            con.Open();
+            try{con.Open();}catch (System.Data.SQLite.SQLiteException e){AskUploadError(e.Message.ToString());}
             SQLiteTransaction qLiteTransaction = con.BeginTransaction();
             SQLiteCommand qLiteCommand = new SQLiteCommand();
             qLiteCommand.Connection = con;
@@ -114,7 +114,7 @@ namespace bilibiliFansBarrage
             string SqlCmdStr = string.Format("SELECT  flag  FROM Fans_bc WHERE mid='{0}'", mid);
             using (SQLiteCommand cmd = new SQLiteCommand(SqlCmdStr, con))
             {
-                con.Open();
+                try{con.Open();}catch (System.Data.SQLite.SQLiteException e){AskUploadError(e.Message.ToString());}
                 var i = cmd.ExecuteScalar();
                 con.Close();
                 return i.ToString();
@@ -133,7 +133,7 @@ namespace bilibiliFansBarrage
             string SqlCmdStr = string.Format("SELECT  mtime  FROM Fans_bc WHERE mid='{0}'", mid);
             using (SQLiteCommand cmd = new SQLiteCommand(SqlCmdStr, con))
             {
-                con.Open();
+                try{con.Open();}catch (System.Data.SQLite.SQLiteException e){AskUploadError(e.Message.ToString());}
                 var i = cmd.ExecuteScalar();
                 con.Close();
                 return i.ToString();
@@ -155,7 +155,7 @@ namespace bilibiliFansBarrage
             string SqlCmdStr = "SELECT uname  FROM Fans_temp order by id desc limit 0,1";
             using (SQLiteCommand cmd = new SQLiteCommand(SqlCmdStr, con))
             {
-                con.Open();
+                try{con.Open();}catch (System.Data.SQLite.SQLiteException e){AskUploadError(e.Message.ToString());}
                 var i = cmd.ExecuteScalar();
                 con.Close();
                 return i.ToString();
@@ -173,7 +173,7 @@ namespace bilibiliFansBarrage
             string SqlCmdStr = "SELECT  face  FROM Fans_temp order by id desc limit 0,1";
             using (SQLiteCommand cmd = new SQLiteCommand(SqlCmdStr, con))
             {
-                con.Open();
+                try{con.Open();}catch (System.Data.SQLite.SQLiteException e){AskUploadError(e.Message.ToString());}
                 var i = cmd.ExecuteScalar();
                 con.Close();
                 return i.ToString();
@@ -193,7 +193,7 @@ namespace bilibiliFansBarrage
             string SqlCmdStr = "SELECT  flag  FROM Fans_temp order by id desc limit 0,1";
             using (SQLiteCommand cmd = new SQLiteCommand(SqlCmdStr, con))
             {
-                con.Open();
+                try{con.Open();}catch (System.Data.SQLite.SQLiteException e){AskUploadError(e.Message.ToString());}
                 var i = cmd.ExecuteScalar();
                 con.Close();
                 return i.ToString();
@@ -211,7 +211,7 @@ namespace bilibiliFansBarrage
             string SqlCmdStr = "Delete  from Fans_temp where id =(select  id from Fans_temp order by id desc limit 0,1)";
             using (SQLiteCommand cmd = new SQLiteCommand(SqlCmdStr, con))
             {
-                con.Open();
+                try{con.Open();}catch (System.Data.SQLite.SQLiteException e){AskUploadError(e.Message.ToString());}
                 var i = cmd.ExecuteNonQuery();
                 con.Close();
                 return i.ToString();
@@ -227,14 +227,11 @@ namespace bilibiliFansBarrage
             {
                 try
                 {
-                    con.Open();
+                    try{con.Open();}catch (System.Data.SQLite.SQLiteException e){AskUploadError(e.Message.ToString());}
                 }
                 catch (System.Data.SQLite.SQLiteException e)
                 {
-                    if(MessageBox.Show(e.Message + "\n\n选择'确定'上报错误给开发者！程序将不会上传您的任何个人信息。", "数据库连接时发生错误：", MessageBoxButtons.YesNo) == DialogResult.Yes)
-                    {
-
-                    }
+                    AskUploadError(e.Message.ToString());
                 }
                 var i = cmd.ExecuteScalar();
                 con.Close();
@@ -251,7 +248,7 @@ namespace bilibiliFansBarrage
             string SqlCmdStr = "SELECT stime FROM BarrageSeq WHERE channel='" + channel + "'";
             using (SQLiteCommand cmd = new SQLiteCommand(SqlCmdStr, con))
             {
-                con.Open();
+                try { con.Open(); } catch (SQLiteException e) { AskUploadError(e.Message.ToString()); }
                 var i = cmd.ExecuteScalar();
                 con.Close();
                 return i.ToString();
@@ -265,7 +262,7 @@ namespace bilibiliFansBarrage
             string SqlCmdStr = string.Format("UPDATE BarrageSeq SET stime ='{0}' WHERE channel='{1}'", Utils.GetTimeStamp(), channel);
             using (SQLiteCommand cmd = new SQLiteCommand(SqlCmdStr, con))
             {
-                con.Open();
+                try{con.Open();}catch (SQLiteException e){AskUploadError(e.Message.ToString());}
                 var i = cmd.ExecuteNonQuery();
                 con.Close();
 
@@ -283,7 +280,7 @@ namespace bilibiliFansBarrage
             string SqlCmdStr = string.Format("Delete from Fans_Temp Where mid = '{0}'", mid);
             using (SQLiteCommand cmd = new SQLiteCommand(SqlCmdStr, con))
             {
-                con.Open();
+                try{con.Open();}catch (System.Data.SQLite.SQLiteException e){AskUploadError(e.Message.ToString());}
                 var i = cmd.ExecuteNonQuery();
                 con.Close();
 
@@ -301,7 +298,7 @@ namespace bilibiliFansBarrage
             string SqlCmdStr = string.Format("UPDATE fans_bc SET LastBaTime = '{0}' WHERE mid = '{1}'", Utils.GetTimeStamp(), mid);
             using (SQLiteCommand cmd = new SQLiteCommand(SqlCmdStr, con))
             {
-                con.Open();
+                try{con.Open();}catch (System.Data.SQLite.SQLiteException e){AskUploadError(e.Message.ToString());}
                 var i = cmd.ExecuteNonQuery();
                 con.Close();
 
@@ -319,7 +316,7 @@ namespace bilibiliFansBarrage
             string SqlCmdStr = "UPDATE fans_bc SET timeflag = '0'";
             using (SQLiteCommand cmd = new SQLiteCommand(SqlCmdStr, con))
             {
-                con.Open();
+                try{con.Open();}catch (System.Data.SQLite.SQLiteException e){AskUploadError(e.Message.ToString());}
                 var i = cmd.ExecuteNonQuery();
                 con.Close();
 
@@ -338,7 +335,7 @@ namespace bilibiliFansBarrage
             string SqlCmdStr = string.Format("SELECT  timeflag FROM Fans_bc WHERE mid='{0}'", mid);
             using (SQLiteCommand cmd = new SQLiteCommand(SqlCmdStr, con))
             {
-                con.Open();
+                try{con.Open();}catch (System.Data.SQLite.SQLiteException e){AskUploadError(e.Message.ToString());}
                 var i = cmd.ExecuteScalar();
                 con.Close();
                 return Convert.ToInt32(i);
