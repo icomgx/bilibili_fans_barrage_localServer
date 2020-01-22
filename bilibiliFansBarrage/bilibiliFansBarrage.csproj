@@ -150,6 +150,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Desktop_112px_1197687_easyicon.net.ico" />
+    <Content Include="EASkins.dll" />
     <Content Include="MetroFramework.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
