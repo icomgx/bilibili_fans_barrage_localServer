@@ -8,7 +8,7 @@ namespace bilibiliFansBarrage
 {
     internal class DownloadHelper
     {
-        private int ByteSize = 1024;
+        private static int ByteSize = 1024;
 
         /// <summary>
         /// 下载中的后缀，下载完成去掉
@@ -134,7 +134,6 @@ namespace bilibiliFansBarrage
             }
             catch (Exception ex)
             {
-                Log.Error(ex.ToString());
                 UploadError(ex.ToString());
             }
             finally
