@@ -10,7 +10,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static bilibiliFansBarrage.ErrorUpload;
-
+using static bilibiliFansBarrage.DownloadHelper;
 
 namespace bilibiliFansBarrage
 {
@@ -30,7 +30,7 @@ namespace bilibiliFansBarrage
         static string url = "http://127.0.0.1:2333/";
         static long FansCounts = 0;
         static long FansP = 0;
-        static string uid = "";
+        static string uid = ""; // 用户ID
         private readonly object utils;
 
         private static void start()
@@ -52,8 +52,8 @@ namespace bilibiliFansBarrage
             for (var i = 0; i < jar.Count; i++)
             {
                 JObject j = JObject.Parse(jar[i].ToString());
-                mid = j["mid"].ToString();
-                mtime = j["mtime"].ToString();
+                mid = j["mid"].ToString(); // 确认数据类型
+                mtime = j["mtime"].ToString(); // 
                 uname = j["uname"].ToString();
                 face = j["face"].ToString();
                 //Console.WriteLine(mid + " " + mtime + " " + uname + " " + face);

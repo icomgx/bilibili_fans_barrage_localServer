@@ -2,12 +2,11 @@ using System;
 using System.IO;
 using System.Net;
 using System.Text;
-using System.Web;
 using System.Windows.Forms;
 
 namespace bilibiliFansBarrage
 {
-    public class ErrorUpload
+    internal class ErrorUpload
     {
         public static string HttpGet(string url)
         {
