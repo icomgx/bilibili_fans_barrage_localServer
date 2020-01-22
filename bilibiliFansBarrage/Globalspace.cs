@@ -7,7 +7,7 @@ namespace Globalspace
 	/// </summary>
 	///
 
-	public class global
+	internal class global
 	{
 
         #region "常量定义区"
