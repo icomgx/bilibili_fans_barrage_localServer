@@ -208,7 +208,10 @@ namespace bilibiliFansBarrage
 
         private void Main_Load(object sender, EventArgs e)
         {
-            
+            if((DateTime.Now.Year.ToString() == "2020") && (DateTime.Now.Month.ToString() == "1") && (DateTime.Now.Day.ToString() == "25"))
+            {
+                MessageBox.Show("新年快乐！！！ \n——来自ShengFAN和Icomgx's Atai的祝福", "信息：");
+            }
             Splash.Show(typeof(MessgeEX.Loading));
             Thread.Sleep(1500);
             ami_TextBox_uid.Text = Utils.LoadUid();
